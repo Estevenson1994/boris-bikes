@@ -34,5 +34,8 @@ bike = docking_station.release_bike
       docking_station.dock(bike)
       expect(docking_station.bike).to eq bike
     end
-
+  
+    it 'raise error if there are no bikes' do
+      expect { docking_station.bike }.to raise_error("No bikes availble")
+   end
 end
