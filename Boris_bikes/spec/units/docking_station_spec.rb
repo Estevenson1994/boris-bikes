@@ -47,4 +47,8 @@ describe DockingStation do
       20.times { docking_station.dock(Bike.new) }
       expect { docking_station.dock(Bike.new) }.to raise_error('Docking station is full')
     end
+    
+    it 'should not allow acces to private variables' do
+      expect {subject.full?}.to raise_error(NoMethodError)
+    end
 end
