@@ -22,7 +22,7 @@ describe DockingStation do
       expect(DockingStation.new).to respond_to(:dock).with(1).argument
     end
 
-    it { is_expected.to respond_to :bike }
+    it { is_expected.to respond_to :bikes }
 
     it 'docks something' do
       bike = Bike.new
@@ -34,7 +34,7 @@ describe DockingStation do
       bike = Bike.new
       docking_station = DockingStation.new
       docking_station.dock(bike)
-      expect(docking_station.bike).to eq bike
+      expect(docking_station.bikes).to eq bike
     end
   
     it 'raise error if there are no bikes' do
