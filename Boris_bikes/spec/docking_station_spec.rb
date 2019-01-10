@@ -40,5 +40,11 @@ describe DockingStation do
     it 'raise error if there are no bikes' do
       docking_station = DockingStation.new
       expect { docking_station.release_bike }.to raise_error("No bikes available")
-   end
+    end
+
+    it 'raise docking station full error' do
+      docking_station = DockingStation.new
+      docking_station.dock(Bike.new)
+      expect { docking_station.dock(Bike.new) }.to raise_error('Docking station is full')
+    end
 end

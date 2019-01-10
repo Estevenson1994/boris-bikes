@@ -16,7 +16,11 @@ class DockingStation
   end
 
   def dock(bike)
-    @bike = bike
+    if @bike.class == Bike
+      raise 'Docking station is full'
+    else
+      @bike = bike
+    end
   end
 
 end
